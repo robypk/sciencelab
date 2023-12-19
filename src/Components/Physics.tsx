@@ -13,49 +13,61 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
       <div className="flex flex-wrap justify-start">
         <div>
           <Card
-            imageUrl="../images/potentiometer.jpg"
+            imageUrl="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
             title="PotentioMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="Convex Lens"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"../images/potentiometer.jpg"}
+            imageUrl={
+              "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
+            }
             title="VoltMeter"
             ButtonName="To Start"
           />
