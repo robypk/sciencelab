@@ -10,6 +10,12 @@ const nextConfig = { output: 'export',
 
 // Optional: Change the output directory `out` -> `dist`
 // distDir: 'dist',
+exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+      // Add other pages as needed
+    };
+  },
 
 }
 
