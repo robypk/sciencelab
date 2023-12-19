@@ -12,7 +12,11 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
       <div className=" p-2 text-left font-extrabold text-5xl">Physics</div>
       <div className="flex flex-wrap justify-start">
         <div>
-          <Card imageUrl="./" title="PotentioMeter" ButtonName="To Start" />
+          <Card
+            imageUrl="../images/potentiometer.jpg"
+            title="PotentioMeter"
+            ButtonName="To Start"
+          />
         </div>
         <div>
           <Card
