@@ -3,5 +3,6 @@
  */
 const nextConfig = {
     output: 'export',
+    basePath:'/sciencelab'
     }
     module.exports = nextConfig
