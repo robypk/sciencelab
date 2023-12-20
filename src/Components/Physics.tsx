@@ -33,28 +33,28 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
