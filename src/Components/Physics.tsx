@@ -12,49 +12,49 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
       <div className="flex flex-wrap justify-start">
         <div>
           <Card
-            imageUrl="/potentiometer.jpg"
+            imageUrl="./sciencelab/potentiometer.jpg"
             title="PotentioMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="Convex Lens"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
         </div>
         <div>
           <Card
-            imageUrl={"/potentiometer.jpg"}
+            imageUrl={"./sciencelab/potentiometer.jpg"}
             title="VoltMeter"
             ButtonName="To Start"
           />
