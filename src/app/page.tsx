@@ -1,7 +1,7 @@
-import Banner from "@/Components/Banner";
-import Physics from "@/Components/Physics";
+import Banner from "@/app/Banner";
+import Physics from "@/app/Physics";
 import "./globals.css";
-import CustomButton from "@/Components/CustomButton";
+import CustomButton from "@/app/CustomButton";
 
 export default function Home() {
   return (
