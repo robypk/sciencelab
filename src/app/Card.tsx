@@ -1,6 +1,7 @@
 // src/components/Card.tsx
 import React from "react";
 import Button from "./CustomButton"; // Assuming you have the Button component
+import "./globals.css";
 
 interface CardProps {
   imageUrl: string;

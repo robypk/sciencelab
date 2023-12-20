@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "./globals.css";
 
 interface PhysicsProps {
   // props definition
