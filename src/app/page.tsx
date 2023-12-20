@@ -1,5 +1,6 @@
 import Banner from "@/Components/Banner";
 import Physics from "@/Components/Physics";
+import "./globals.css";
 
 export default function Home() {
   return (
