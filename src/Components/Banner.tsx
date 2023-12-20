@@ -1,5 +1,4 @@
 import React from "react";
-import LabBanner from "../../public/images/LabBanner.jpg";
 
 interface BannerProps {
   // props definition
