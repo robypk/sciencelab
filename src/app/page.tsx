@@ -1,7 +1,9 @@
+"use client";
+import React, { useState } from "react";
 import Banner from "@/app/Banner";
 import Physics from "@/app/Physics";
 import "./globals.css";
-import CustomButton from "@/app/CustomButton";
+import UnityBuild from "./UnityBuild";
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
       <div className=" p-10">
         <Physics />
       </div>
+      <UnityBuild />
     </div>
   );
 }
