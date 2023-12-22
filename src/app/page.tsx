@@ -6,16 +6,28 @@ import "./globals.css";
 import UnityBuild from "./UnityBuild";
 
 export default function Home() {
+  const [showUnityScene, setShowUnityScene] = useState(false);
+  const handleButtonClick = () => {
+    setShowUnityScene(!showUnityScene);
+  };
   return (
-    <div>
-      <Banner />
-      <div className=" p-14">
-        <Physics />
+    <>
+      <button onClick={handleButtonClick}>Toggle Unity Scene</button>
+      <div
+        style={{ visibility: !showUnityScene ? "visible" : "hidden" }}
+        className="absolute z-10 bg-white"
+      >
+        <Banner />
+        <div className=" p-14 ">
+          <Physics />
+        </div>
+        <div className=" p-14">
+          <Physics />
+        </div>
       </div>
-      <div className=" p-10">
-        <Physics />
+      <div className="absolute z-0">
+        <UnityBuild />
       </div>
-      <UnityBuild />
-    </div>
+    </>
   );
 }

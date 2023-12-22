@@ -6,23 +6,29 @@ interface UnityBuildProps {
 }
 
 const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
-  const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: "Build/MuseumWeb.loader.js",
-    dataUrl: "Build/MuseumWeb.data",
-    frameworkUrl: "Build/MuseumWeb.framework.js",
-    codeUrl: "Build/MuseumWeb.wasm",
-  });
+  const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
+    useUnityContext({
+      loaderUrl: "Build/MuseumWeb.loader.js",
+      dataUrl: "Build/MuseumWeb.data",
+      frameworkUrl: "Build/MuseumWeb.framework.js",
+      codeUrl: "Build/MuseumWeb.wasm",
+    });
+
+  function handleClickEnterFullscreen() {
+    requestFullscreen(true);
+  }
   return (
-    <div>
+    <>
       {!isLoaded && (
         <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
       )}
       <Unity
-        className=" w-screen h-screen"
         unityProvider={unityProvider}
         style={{ visibility: isLoaded ? "visible" : "hidden" }}
+        className="h-screen w-screen"
       />
-    </div>
+      <button onClick={handleClickEnterFullscreen}>Enter Fullscreen</button>
+    </>
   );
 };
 
