@@ -13,7 +13,7 @@ export default function Home() {
   };
   return (
     <>
-      <nav className=" bg-black flex items-center justify-center">
+      <nav className=" bg-black flex items-center justify-center p-5 w-screen">
         <CustomButton
           ButtonName={!showUnityScene ? "To Game" : " To Home"}
           onClick={handleButtonClick}

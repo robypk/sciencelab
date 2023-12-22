@@ -23,7 +23,9 @@ const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
       <CustomButton
         ButtonName={
           !isLoaded
-            ? Math.round(loadingProgression * 100).toString()
+            ? "Please Wait.." +
+              Math.round(loadingProgression * 100).toString() +
+              " %"
             : "Full Screen"
         }
         onClick={handleClickEnterFullscreen}
@@ -35,7 +37,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
       <Unity
         unityProvider={unityProvider}
         style={{ visibility: isLoaded ? "visible" : "hidden" }}
-        className="w-screen"
+        className="w-screen flex justify-center "
       />
 
       {/* <button onClick={handleClickEnterFullscreen}>Enter Fullscreen</button> */}
