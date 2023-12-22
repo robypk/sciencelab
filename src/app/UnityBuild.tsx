@@ -18,6 +18,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
         <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
       )}
       <Unity
+        className=" w-screen h-screen"
         unityProvider={unityProvider}
         style={{ visibility: isLoaded ? "visible" : "hidden" }}
       />
