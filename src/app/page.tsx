@@ -4,6 +4,7 @@ import Banner from "@/app/Banner";
 import Physics from "@/app/Physics";
 import "./globals.css";
 import UnityBuild from "./UnityBuild";
+import CustomButton from "./CustomButton";
 
 export default function Home() {
   const [showUnityScene, setShowUnityScene] = useState(false);
@@ -12,7 +13,13 @@ export default function Home() {
   };
   return (
     <>
-      <button onClick={handleButtonClick}>Toggle Unity Scene</button>
+      <nav className=" bg-black flex items-center justify-center">
+        <CustomButton
+          ButtonName={!showUnityScene ? "To Game" : " To Home"}
+          onClick={handleButtonClick}
+        />
+      </nav>
+
       <div
         style={{ visibility: !showUnityScene ? "visible" : "hidden" }}
         className="absolute z-10 bg-white"
@@ -25,7 +32,7 @@ export default function Home() {
           <Physics />
         </div>
       </div>
-      <div className="absolute z-0">
+      <div className="absolute z-0 bg-black">
         <UnityBuild />
       </div>
     </>
