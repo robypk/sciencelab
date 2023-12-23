@@ -3,10 +3,11 @@ import Card from "./Card";
 import "./globals.css";
 
 interface PhysicsProps {
-  // props definition
+  unityLoading: number;
+  isunityloaded: boolean;
 }
 
-const Physics: React.FC<PhysicsProps> = ({}) => {
+const Physics: React.FC<PhysicsProps> = ({ unityLoading, isunityloaded }) => {
   return (
     <>
       <div className=" p-2 text-left font-extrabold text-5xl">Physics</div>
@@ -15,49 +16,91 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
           <Card
             imageUrl="potentiometer.jpg"
             title="PotentioMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="Convex Lens"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
-            ButtonName="To Start"
+            ButtonName={
+              !isunityloaded
+                ? "Please Wait.." +
+                  Math.round(unityLoading * 100).toString() +
+                  " %"
+                : "To Start"
+            }
           />
         </div>
       </div>
