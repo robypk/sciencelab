@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import CustomButton from "./CustomButton";
 
 interface UnityBuildProps {
-  // props definition
+  onDataUpdate: (data: number, unityLoaded: boolean) => void;
 }
 
-const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
+const UnityBuild: React.FC<UnityBuildProps> = ({ onDataUpdate }) => {
   const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
     useUnityContext({
       loaderUrl: "Build/MuseumWeb.loader.js",
@@ -14,6 +14,13 @@ const UnityBuild: React.FC<UnityBuildProps> = ({}) => {
       frameworkUrl: "Build/MuseumWeb.framework.js",
       codeUrl: "Build/MuseumWeb.wasm",
     });
+
+  useEffect(() => {
+    onDataUpdate(loadingProgression, isLoaded);
+    return () => {
+      console.log("Component unmounted");
+    };
+  }, [loadingProgression, isLoaded]);
 
   function handleClickEnterFullscreen() {
     requestFullscreen(true);

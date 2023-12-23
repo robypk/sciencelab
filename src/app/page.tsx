@@ -8,6 +8,13 @@ import CustomButton from "./CustomButton";
 
 export default function Home() {
   const [showUnityScene, setShowUnityScene] = useState(false);
+  const [data, setData] = useState(0);
+  const [isUnityLoaed, setIsUnityLoaed] = useState(false);
+
+  const handleDataUpdate = (newData: number, unityloaded: boolean) => {
+    setData(newData);
+    setIsUnityLoaed(unityloaded);
+  };
   const handleButtonClick = () => {
     setShowUnityScene(!showUnityScene);
   };
@@ -26,14 +33,14 @@ export default function Home() {
       >
         <Banner />
         <div className=" p-14 ">
-          <Physics />
+          <Physics unityLoading={data} isunityloaded={isUnityLoaed} />
         </div>
         <div className=" p-14">
-          <Physics />
+          <Physics unityLoading={data} isunityloaded={isUnityLoaed} />
         </div>
       </div>
       <div className="absolute z-0 bg-black">
-        <UnityBuild />
+        <UnityBuild onDataUpdate={handleDataUpdate} />
       </div>
     </>
   );
