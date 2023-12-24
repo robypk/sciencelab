@@ -13,11 +13,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   onClick,
   intaractable,
 }) => {
-  const handleClick = () => {
+  function handleClick() {
     if (onClick) {
       onClick();
     }
-  };
+  }
   return (
     <div>
       <button

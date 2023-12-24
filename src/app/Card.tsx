@@ -1,15 +1,21 @@
 // src/components/Card.tsx
 import React from "react";
-import Button from "./CustomButton"; // Assuming you have the Button component
 import "./globals.css";
+import CustomButton from "./CustomButton";
 
 interface CardProps {
   imageUrl: string;
   title: string;
   ButtonName: string;
+  forUnityOpenFromCard?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, ButtonName }) => {
+const Card: React.FC<CardProps> = ({
+  imageUrl,
+  title,
+  ButtonName,
+  forUnityOpenFromCard,
+}) => {
   return (
     <div className=" m-5">
       <div className=" relative h-52 w-72 rounded-xl overflow-hidden shadow-gray-600 shadow-xl">
@@ -23,7 +29,10 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, ButtonName }) => {
             {title}
           </h1>
           <div className="absolute bottom-0 left-0 p-4">
-            <Button ButtonName={ButtonName} />
+            <CustomButton
+              ButtonName={ButtonName}
+              onClick={forUnityOpenFromCard}
+            ></CustomButton>
           </div>
         </div>
       </div>
