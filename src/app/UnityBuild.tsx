@@ -39,12 +39,12 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
     };
   }, [loadingProgression, isLoaded]);
 
-  // useEffect(() => {
-  //   requestFullscreen(fullscreen);
-  //   return () => {
-  //     console.log("Component unmounted");
-  //   };
-  // }, [fullscreen]);
+  useEffect(() => {
+    requestFullscreen(fullscreen);
+    return () => {
+      console.log("Component unmounted");
+    };
+  }, [fullscreen]);
   /**
    *
    *
