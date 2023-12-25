@@ -23,8 +23,10 @@ export default function Home() {
     setIsUnityLoaed(unityloaded);
   }
   function handleButtonClick() {
-    setunityfullScreen(!unityfullScreen);
     setShowUnityScene(!showUnityScene);
+    if (isUnityLoaed) {
+      setunityfullScreen(!unityfullScreen);
+    }
   }
 
   /**
@@ -55,7 +57,6 @@ export default function Home() {
             onClick={handleButtonClick}
           />
         </div>
-
         <UnityBuild
           onDataUpdate={ForUnityLoading}
           fullscreen={unityfullScreen}
