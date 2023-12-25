@@ -24,9 +24,9 @@ export default function Home() {
   }
   function handleButtonClick() {
     setShowUnityScene(!showUnityScene);
-    if (isUnityLoaed) {
-      setunityfullScreen(!unityfullScreen);
-    }
+    // if (isUnityLoaed) {
+    //   setunityfullScreen(!unityfullScreen);
+    // }
   }
 
   /**
