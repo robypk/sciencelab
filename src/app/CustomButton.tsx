@@ -4,7 +4,7 @@ import "./globals.css";
 interface CustomButtonProps {
   // props definition
   ButtonName: string;
-  onClick?: () => void;
+  onClick?(): void;
   intaractable?: boolean;
 }
 

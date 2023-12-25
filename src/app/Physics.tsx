@@ -6,7 +6,7 @@ import { debug } from "console";
 interface PhysicsProps {
   unityLoading: number;
   isunityloaded: boolean;
-  forOpenUnityFromPhysics?: () => void;
+  forOpenUnityFromPhysics?(): void;
 }
 
 const Physics: React.FC<PhysicsProps> = ({
@@ -30,10 +30,8 @@ const Physics: React.FC<PhysicsProps> = ({
   }
 
   function forUnityLoadingForCard() {
-    console.log("fromPhysicsAbove if ");
     if (forOpenUnityFromPhysics) {
       forOpenUnityFromPhysics();
-      console.log("fromPhysics below if ");
     }
   }
 

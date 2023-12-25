@@ -7,7 +7,7 @@ interface CardProps {
   imageUrl: string;
   title: string;
   ButtonName: string;
-  forUnityOpenFromCard?: () => void;
+  forUnityOpenFromCard?(): void;
 }
 
 const Card: React.FC<CardProps> = ({

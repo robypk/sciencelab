@@ -3,7 +3,7 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 import CustomButton from "./CustomButton";
 
 interface UnityBuildProps {
-  onDataUpdate: (data: number, unityLoaded: boolean) => void;
+  onDataUpdate(data: number, unityLoaded: boolean): void;
   fullscreen: boolean;
 }
 
@@ -34,27 +34,12 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
   useEffect(() => {
     onDataUpdate(loadingProgression, isLoaded);
-    return () => {
-      console.log("Component unmounted");
-    };
   }, [loadingProgression, isLoaded]);
 
   useEffect(() => {
     requestFullscreen(fullscreen);
-    return () => {
-      console.log("Component unmounted");
-    };
+    console.log("Full Screen  useEffect");
   }, [fullscreen]);
-  /**
-   *
-   *
-   * Functions
-   *
-   *
-   */
-  function handleClickEnterFullscreen() {
-    requestFullscreen(true);
-  }
 
   /**
    *
@@ -65,14 +50,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
   return (
     <>
-      {!isLoaded && (
-        <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
-      )}
-      <Unity
-        unityProvider={unityProvider}
-        style={{ visibility: isLoaded ? "visible" : "hidden" }}
-        className="w-screen flex justify-center "
-      />
+      <Unity unityProvider={unityProvider} className="w-screen" />
     </>
   );
 };
