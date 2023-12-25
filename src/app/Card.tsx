@@ -8,6 +8,7 @@ interface CardProps {
   title: string;
   ButtonName: string;
   forUnityOpenFromCard?(): void;
+  ButtonInteractable?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -15,6 +16,7 @@ const Card: React.FC<CardProps> = ({
   title,
   ButtonName,
   forUnityOpenFromCard,
+  ButtonInteractable,
 }) => {
   return (
     <div className=" m-5">
@@ -32,6 +34,7 @@ const Card: React.FC<CardProps> = ({
             <CustomButton
               ButtonName={ButtonName}
               onClick={forUnityOpenFromCard}
+              intaractable={ButtonInteractable}
             ></CustomButton>
           </div>
         </div>
