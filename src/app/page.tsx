@@ -11,18 +11,18 @@ export default function Home() {
    * Global Variables
    */
   const [showUnityScene, setShowUnityScene] = useState(false);
-  const [data, setData] = useState(0);
+  const [unityLoadingPercentage, setunityLoadingPercentage] = useState(0);
   const [isUnityLoaed, setIsUnityLoaed] = useState(false);
   const [unityfullScreen, setunityfullScreen] = useState(false);
 
   /**
    * Global Functions
    */
-  function ForUnityLoading(newData: number, unityloaded: boolean) {
-    setData(newData);
+  function ForUnityLoading(loadingPercentage: number, unityloaded: boolean) {
+    setunityLoadingPercentage(loadingPercentage);
     setIsUnityLoaed(unityloaded);
   }
-  function handleButtonClick() {
+  function onUnityReactSwitch() {
     setShowUnityScene(!showUnityScene);
     if (isUnityLoaed) {
       setunityfullScreen(!unityfullScreen);
@@ -41,20 +41,24 @@ export default function Home() {
         <Banner />
         <div className=" p-14 ">
           <Physics
-            unityLoading={data}
+            unityLoading={unityLoadingPercentage}
             isunityloaded={isUnityLoaed}
-            forOpenUnityFromPhysics={handleButtonClick}
+            forOpenUnityFromPhysics={onUnityReactSwitch}
           />
         </div>
         <div className=" p-14">
-          <Physics unityLoading={data} isunityloaded={isUnityLoaed} />
+          <Physics
+            unityLoading={unityLoadingPercentage}
+            isunityloaded={isUnityLoaed}
+            forOpenUnityFromPhysics={onUnityReactSwitch}
+          />
         </div>
       </div>
       <div className="absolute z-0 bg-black">
-        <div className=" flex justify-center">
+        <div className=" absolute left-1/2">
           <CustomButton
             ButtonName={!showUnityScene ? "To Game" : " To Home"}
-            onClick={handleButtonClick}
+            onClick={onUnityReactSwitch}
           />
         </div>
         <UnityBuild
