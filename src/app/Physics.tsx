@@ -48,6 +48,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl="potentiometer.jpg"
             title="PotentioMeter"
             ButtonName={GetButtonName()}
+            ButtonInteractable={!isunityloaded}
             forUnityOpenFromCard={forUnityLoadingForCard}
           />
         </div>
