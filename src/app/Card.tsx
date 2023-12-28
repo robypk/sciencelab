@@ -7,8 +7,9 @@ interface CardProps {
   imageUrl: string;
   title: string;
   ButtonName: string;
-  forUnityOpenFromCard?(): void;
+  forUnityOpenFromCard?(SceneIndex: number): void;
   ButtonInteractable?: boolean;
+  SceneIndex: number;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -17,7 +18,13 @@ const Card: React.FC<CardProps> = ({
   ButtonName,
   forUnityOpenFromCard,
   ButtonInteractable,
+  SceneIndex,
 }) => {
+  function handleClick() {
+    if (forUnityOpenFromCard) {
+      forUnityOpenFromCard(SceneIndex);
+    }
+  }
   return (
     <div className=" m-5">
       <div className=" relative h-52 w-72 rounded-xl overflow-hidden shadow-gray-600 shadow-xl">
@@ -31,11 +38,13 @@ const Card: React.FC<CardProps> = ({
             {title}
           </h1>
           <div className="absolute bottom-0 left-0 p-4">
-            <CustomButton
-              ButtonName={ButtonName}
-              onClick={forUnityOpenFromCard}
-              intaractable={ButtonInteractable}
-            ></CustomButton>
+            <button
+              className=" bg-inherit border-2 border-cyan-600 hover:bg-teal-400 text-white font-semibold py-2 px-4 rounded-full transition duration-300"
+              onClick={handleClick}
+              disabled={ButtonInteractable}
+            >
+              {ButtonName}
+            </button>
           </div>
         </div>
       </div>

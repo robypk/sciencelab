@@ -14,19 +14,32 @@ export default function Home() {
   const [unityLoadingPercentage, setunityLoadingPercentage] = useState(0);
   const [isUnityLoaed, setIsUnityLoaed] = useState(false);
   const [unityfullScreen, setunityfullScreen] = useState(false);
+  const [unitySceneIndex, setUnitySceneIndex] = useState(0);
 
   /**
    * Global Functions
    */
-  function ForUnityLoading(loadingPercentage: number, unityloaded: boolean) {
+  function ForUnityLoading(loadingPercentage: number) {
     setunityLoadingPercentage(loadingPercentage);
-    setIsUnityLoaed(unityloaded);
   }
+
+  function unityisLoaded(isloaded: boolean) {
+    setIsUnityLoaed(isloaded);
+  }
+
   function onUnityReactSwitch() {
     setShowUnityScene(!showUnityScene);
     if (isUnityLoaed) {
       setunityfullScreen(!unityfullScreen);
     }
+  }
+
+  function ForUnitySceneChange(SceneIndex: number) {
+    setShowUnityScene(!showUnityScene);
+    if (isUnityLoaed) {
+      setunityfullScreen(!unityfullScreen);
+    }
+    setUnitySceneIndex(SceneIndex);
   }
 
   /**
@@ -43,14 +56,14 @@ export default function Home() {
           <Physics
             unityLoading={unityLoadingPercentage}
             isunityloaded={isUnityLoaed}
-            forOpenUnityFromPhysics={onUnityReactSwitch}
+            forUnitySceneChange={ForUnitySceneChange}
           />
         </div>
         <div className=" p-14">
           <Physics
             unityLoading={unityLoadingPercentage}
             isunityloaded={isUnityLoaed}
-            forOpenUnityFromPhysics={onUnityReactSwitch}
+            forUnitySceneChange={ForUnitySceneChange}
           />
         </div>
       </div>
@@ -63,7 +76,10 @@ export default function Home() {
         </div>
         <UnityBuild
           onDataUpdate={ForUnityLoading}
+          unityLoaded={unityisLoaded}
+          unityToReact={onUnityReactSwitch}
           fullscreen={unityfullScreen}
+          toOpenUnityScene={unitySceneIndex}
         />
       </div>
     </>

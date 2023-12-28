@@ -1,18 +1,17 @@
 import React from "react";
 import Card from "./Card";
 import "./globals.css";
-import { debug } from "console";
 
 interface PhysicsProps {
   unityLoading: number;
   isunityloaded: boolean;
-  forOpenUnityFromPhysics?(): void;
+  forUnitySceneChange?(SceneIndex: number): void;
 }
 
 const Physics: React.FC<PhysicsProps> = ({
   unityLoading,
   isunityloaded,
-  forOpenUnityFromPhysics,
+  forUnitySceneChange,
 }) => {
   /**
    * SUMMARY
@@ -29,9 +28,9 @@ const Physics: React.FC<PhysicsProps> = ({
     return buttonNa;
   }
 
-  function forUnityLoadingForCard() {
-    if (forOpenUnityFromPhysics) {
-      forOpenUnityFromPhysics();
+  function forUnityLoadingForCard(SceneIndex: number) {
+    if (forUnitySceneChange) {
+      forUnitySceneChange(SceneIndex);
     }
   }
 
@@ -50,6 +49,7 @@ const Physics: React.FC<PhysicsProps> = ({
             ButtonName={GetButtonName()}
             ButtonInteractable={!isunityloaded}
             forUnityOpenFromCard={forUnityLoadingForCard}
+            SceneIndex={1}
           />
         </div>
         <div>
@@ -57,6 +57,9 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="Convex Lens"
             ButtonName={GetButtonName()}
+            ButtonInteractable={!isunityloaded}
+            forUnityOpenFromCard={forUnityLoadingForCard}
+            SceneIndex={2}
           />
         </div>
         <div>
@@ -64,6 +67,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName={GetButtonName()}
+            SceneIndex={0}
           />
         </div>
         <div>
@@ -71,6 +75,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName={GetButtonName()}
+            SceneIndex={0}
           />
         </div>
         <div>
@@ -78,6 +83,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName={GetButtonName()}
+            SceneIndex={0}
           />
         </div>
         <div>
@@ -85,6 +91,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName={GetButtonName()}
+            SceneIndex={0}
           />
         </div>
         <div>
@@ -92,6 +99,7 @@ const Physics: React.FC<PhysicsProps> = ({
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
             ButtonName={GetButtonName()}
+            SceneIndex={0}
           />
         </div>
       </div>
