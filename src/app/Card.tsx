@@ -7,7 +7,7 @@ interface CardProps {
   imageUrl: string;
   title: string;
   ButtonName: string;
-  forUnityOpenFromCard?(SceneIndex: number): void;
+  UnitySceneChange_card?(SceneIndex: number): void;
   ButtonInteractable?: boolean;
   SceneIndex: number;
 }
@@ -16,13 +16,13 @@ const Card: React.FC<CardProps> = ({
   imageUrl,
   title,
   ButtonName,
-  forUnityOpenFromCard,
+  UnitySceneChange_card,
   ButtonInteractable,
   SceneIndex,
 }) => {
-  function handleClick() {
-    if (forUnityOpenFromCard) {
-      forUnityOpenFromCard(SceneIndex);
+  function onCardButtonClick() {
+    if (UnitySceneChange_card) {
+      UnitySceneChange_card(SceneIndex);
     }
   }
   return (
@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({
           <div className="absolute bottom-0 left-0 p-4">
             <button
               className=" bg-inherit border-2 border-cyan-600 hover:bg-teal-400 text-white font-semibold py-2 px-4 rounded-full transition duration-300"
-              onClick={handleClick}
+              onClick={onCardButtonClick}
               disabled={ButtonInteractable}
             >
               {ButtonName}

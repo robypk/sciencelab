@@ -5,13 +5,13 @@ import "./globals.css";
 interface PhysicsProps {
   unityLoading: number;
   isunityloaded: boolean;
-  forUnitySceneChange?(SceneIndex: number): void;
+  UnitySceneChange_Physics?(SceneIndex: number): void;
 }
 
 const Physics: React.FC<PhysicsProps> = ({
   unityLoading,
   isunityloaded,
-  forUnitySceneChange,
+  UnitySceneChange_Physics,
 }) => {
   /**
    * SUMMARY
@@ -28,9 +28,9 @@ const Physics: React.FC<PhysicsProps> = ({
     return buttonNa;
   }
 
-  function forUnityLoadingForCard(SceneIndex: number) {
-    if (forUnitySceneChange) {
-      forUnitySceneChange(SceneIndex);
+  function unitySceneChage(SceneIndex: number) {
+    if (UnitySceneChange_Physics) {
+      UnitySceneChange_Physics(SceneIndex);
     }
   }
 
@@ -48,7 +48,7 @@ const Physics: React.FC<PhysicsProps> = ({
             title="PotentioMeter"
             ButtonName={GetButtonName()}
             ButtonInteractable={!isunityloaded}
-            forUnityOpenFromCard={forUnityLoadingForCard}
+            UnitySceneChange_card={unitySceneChage}
             SceneIndex={1}
           />
         </div>
@@ -58,7 +58,7 @@ const Physics: React.FC<PhysicsProps> = ({
             title="Convex Lens"
             ButtonName={GetButtonName()}
             ButtonInteractable={!isunityloaded}
-            forUnityOpenFromCard={forUnityLoadingForCard}
+            UnitySceneChange_card={unitySceneChage}
             SceneIndex={2}
           />
         </div>
