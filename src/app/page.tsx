@@ -28,7 +28,7 @@ export default function Home() {
   }
 
   function onUnityReactSwitch() {
-    setShowUnityScene(!showUnityScene);
+    //setShowUnityScene(!showUnityScene);
     setunityfullScreen(!unityfullScreen);
   }
 
