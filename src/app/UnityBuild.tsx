@@ -4,17 +4,15 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 interface UnityBuildProps {
   unityLoadingPercentage(data: number): void;
   unityLoaded(isunityLoaded: boolean): void;
-  unityToReact(): void;
   SceneIndex: number;
-  fullscreen: boolean;
+  isUnitySceneChanged: boolean;
 }
 
 const UnityBuild: React.FC<UnityBuildProps> = ({
   unityLoadingPercentage,
   unityLoaded,
-  unityToReact,
   SceneIndex,
-  fullscreen,
+  isUnitySceneChanged,
 }) => {
   /**
    *
@@ -26,7 +24,6 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
   const {
     unityProvider,
     loadingProgression,
-    isLoaded,
     requestFullscreen,
     sendMessage,
     addEventListener,
@@ -41,16 +38,15 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
   /**
    * Functions
    */
-  const unityExitFullScreen = useCallback(() => {
-    console.log("exit Full Screen Callback");
-    //sendMessage("ReactListener", "selectSceene", 0);
-    //unityToReact();
-  }, []);
 
   const unityisReady = useCallback(() => {
     unityLoaded(true);
   }, []);
 
+  function unitySceneChange(SceneIndexx: number) {
+    sendMessage("ReactListener", "selectSceene", SceneIndexx);
+    requestFullscreen(true);
+  }
   /**
    *
    *
@@ -58,27 +54,14 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    *
    *
    */
-
   useEffect(() => {
     sendMessage("ReactListener", "selectSceene", SceneIndex);
-  }, [SceneIndex]);
+    requestFullscreen(true);
+  }, [isUnitySceneChanged]);
 
   useEffect(() => {
     unityLoadingPercentage(loadingProgression);
-    //sendMessage("ReactListener", "selectSceene", 0);
   }, [loadingProgression]);
-
-  useEffect(() => {
-    requestFullscreen(fullscreen);
-    console.log("Full Screen  useEffect");
-  }, [fullscreen]);
-
-  useEffect(() => {
-    addEventListener("unityFullScreen", unityExitFullScreen);
-    return () => {
-      removeEventListener("unityFullScreen", unityExitFullScreen);
-    };
-  }, [unityExitFullScreen]);
 
   useEffect(() => {
     addEventListener("unityReady", unityisReady);
@@ -95,7 +78,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
   return (
     <>
-      <Unity unityProvider={unityProvider} className="w-screen" />
+      <Unity unityProvider={unityProvider} className=" w-1" />
     </>
   );
 };
