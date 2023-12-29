@@ -42,11 +42,6 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
   const unityisReady = useCallback(() => {
     unityLoaded(true);
   }, []);
-
-  function unitySceneChange(SceneIndexx: number) {
-    sendMessage("ReactListener", "selectSceene", SceneIndexx);
-    requestFullscreen(true);
-  }
   /**
    *
    *
