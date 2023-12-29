@@ -29,7 +29,7 @@ export default function Home() {
 
   function onUnityReactSwitch() {
     setShowUnityScene(!showUnityScene);
-    //setunityfullScreen(!unityfullScreen);
+    setunityfullScreen(!unityfullScreen);
   }
 
   function ForUnitySceneChange(SceneIndex: number) {
