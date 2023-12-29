@@ -2,18 +2,18 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 interface UnityBuildProps {
-  onDataUpdate(data: number): void;
+  unityLoadingPercentage(data: number): void;
   unityLoaded(isunityLoaded: boolean): void;
   unityToReact(): void;
-  toOpenUnityScene: number;
+  SceneIndex: number;
   fullscreen: boolean;
 }
 
 const UnityBuild: React.FC<UnityBuildProps> = ({
-  onDataUpdate,
+  unityLoadingPercentage,
   unityLoaded,
   unityToReact,
-  toOpenUnityScene,
+  SceneIndex,
   fullscreen,
 }) => {
   /**
@@ -43,7 +43,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
   const unityExitFullScreen = useCallback(() => {
     console.log("exit Full Screen Callback");
-    sendMessage("ReactListener", "selectSceene", 0);
+    //sendMessage("ReactListener", "selectSceene", 0);
     unityToReact();
   }, []);
 
@@ -51,9 +51,6 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
     unityLoaded(true);
   }, []);
 
-  function toOpenScene(SceneIndex: number): void {
-    sendMessage("ReactListener", "selectSceene", SceneIndex);
-  }
   /**
    *
    *
@@ -63,11 +60,11 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
 
   useEffect(() => {
-    sendMessage("ReactListener", "selectSceene", toOpenUnityScene);
-  }, [toOpenUnityScene]);
+    sendMessage("ReactListener", "selectSceene", SceneIndex);
+  }, [SceneIndex]);
 
   useEffect(() => {
-    onDataUpdate(loadingProgression);
+    unityLoadingPercentage(loadingProgression);
     //sendMessage("ReactListener", "selectSceene", 0);
   }, [loadingProgression]);
 
