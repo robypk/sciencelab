@@ -28,8 +28,8 @@ export default function Home() {
   }
 
   function onUnityReactSwitch() {
-    //setShowUnityScene(!showUnityScene);
-    setunityfullScreen(!unityfullScreen);
+    setShowUnityScene(!showUnityScene);
+    //setunityfullScreen(!unityfullScreen);
   }
 
   function ForUnitySceneChange(SceneIndex: number) {
