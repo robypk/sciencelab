@@ -10,11 +10,10 @@ export default function Home() {
   /**
    * Global Variables
    */
-  const [showUnityScene, setShowUnityScene] = useState(false);
   const [unityLoadingPercentage, setunityLoadingPercentage] = useState(0);
   const [isUnityLoaed, setIsUnityLoaed] = useState(false);
-  const [unityfullScreen, setunityfullScreen] = useState(false);
-  const [unitySceneIndex, setUnitySceneIndex] = useState(0);
+  const [unitySceneIndex, setUnitySceneIndex] = useState(Number);
+  const [isunitySceneChanged, setIsunitySceneChanged] = useState(false);
 
   /**
    * Global Functions
@@ -27,15 +26,9 @@ export default function Home() {
     setIsUnityLoaed(isloaded);
   }
 
-  function onUnityReactSwitch() {
-    setShowUnityScene(!showUnityScene);
-    setunityfullScreen(!unityfullScreen);
-  }
-
-  function ForUnitySceneChange(SceneIndex: number) {
-    setShowUnityScene(!showUnityScene);
-    setunityfullScreen(!unityfullScreen);
-    setUnitySceneIndex(SceneIndex);
+  function ForUnitySceneChange(SceneIndexx: number) {
+    setIsunitySceneChanged(!isunitySceneChanged);
+    setUnitySceneIndex(SceneIndexx);
   }
 
   /**
@@ -43,10 +36,7 @@ export default function Home() {
    */
   return (
     <>
-      <div
-        style={{ visibility: !showUnityScene ? "visible" : "hidden" }}
-        className="absolute z-10 bg-white"
-      >
+      <div className=" absolute z-10 bg-white">
         <Banner />
         <div className=" p-14 ">
           <Physics
@@ -63,19 +53,12 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="absolute z-0 bg-black">
-        <div className=" absolute left-1/2">
-          <CustomButton
-            ButtonName={!showUnityScene ? "To Game" : " To Home"}
-            onClick={onUnityReactSwitch}
-          />
-        </div>
+      <div className=" absolute z-0">
         <UnityBuild
           unityLoadingPercentage={percentageUnityLoading}
           unityLoaded={unityisLoaded}
-          unityToReact={onUnityReactSwitch}
-          fullscreen={unityfullScreen}
           SceneIndex={unitySceneIndex}
+          isUnitySceneChanged={isunitySceneChanged}
         />
       </div>
     </>
