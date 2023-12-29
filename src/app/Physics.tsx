@@ -23,7 +23,7 @@ const Physics: React.FC<PhysicsProps> = ({
       buttonNa = "Let's head to the lab!";
     } else {
       buttonNa =
-        "Please Wait.." + Math.round(unityLoading * 100).toString() + " %";
+        "Please Wait: " + Math.round(unityLoading * 100).toString() + " %";
     }
     return buttonNa;
   }
