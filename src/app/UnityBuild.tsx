@@ -44,7 +44,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
   const unityExitFullScreen = useCallback(() => {
     console.log("exit Full Screen Callback");
     //sendMessage("ReactListener", "selectSceene", 0);
-    unityToReact();
+    //unityToReact();
   }, []);
 
   const unityisReady = useCallback(() => {
