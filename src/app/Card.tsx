@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(${imageUrl})`,
           }}
         >
-          <h1 className=" bottom-0 left-0 p-4 text-white  md:text-3xl font-semibold">
+          <h1 className=" bottom-0 left-0 p-4 text-white text-3xl font-semibold">
             {title}
           </h1>
           <div className="absolute bottom-0 left-0 p-4">
