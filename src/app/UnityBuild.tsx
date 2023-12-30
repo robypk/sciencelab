@@ -50,8 +50,8 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    *
    */
   useEffect(() => {
-    sendMessage("ReactListener", "selectSceene", SceneIndex);
     requestFullscreen(true);
+    sendMessage("ReactListener", "selectSceene", SceneIndex);
   }, [isUnitySceneChanged]);
 
   useEffect(() => {
