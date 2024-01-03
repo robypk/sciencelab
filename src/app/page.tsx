@@ -45,13 +45,13 @@ export default function Home() {
             UnitySceneChange_Physics={ForUnitySceneChange}
           />
         </div>
-        <div className=" p-14">
+        {/* <div className=" p-14">
           <Physics
             unityLoading={unityLoadingPercentage}
             isunityloaded={isUnityLoaed}
             UnitySceneChange_Physics={ForUnitySceneChange}
           />
-        </div>
+        </div> */}
       </div>
       <div className=" absolute z-0">
         <UnityBuild
