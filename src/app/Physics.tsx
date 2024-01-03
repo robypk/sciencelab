@@ -40,19 +40,22 @@ const Physics: React.FC<PhysicsProps> = ({
    */
   return (
     <>
-      <div className=" p-2 text-left font-extrabold text-5xl">Physics</div>
+      <div className=" p-2 text-left font-extrabold text-5xl">
+        {" "}
+        Engineering Survey
+      </div>
       <div className="flex flex-wrap justify-start">
         <div>
           <Card
-            imageUrl="potentiometer.jpg"
-            title="PotentioMeter"
+            imageUrl="Theodolite.jpg"
+            title="Theodolite"
             ButtonName={GetButtonName()}
             ButtonInteractable={!isunityloaded}
             UnitySceneChange_card={unitySceneChage}
             SceneIndex={1}
           />
         </div>
-        <div>
+        {/* <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="Convex Lens"
@@ -101,7 +104,7 @@ const Physics: React.FC<PhysicsProps> = ({
             ButtonName={GetButtonName()}
             SceneIndex={0}
           />
-        </div>
+        </div> */}
       </div>
     </>
   );

@@ -9,14 +9,14 @@ const Banner: React.FC<BannerProps> = ({}) => {
   return (
     <>
       <div
-        className=" relative bg-cover bg-center h-96 w-screen"
+        className=" relative bg-cover bg-center h-96 md:w-screen"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url("LabBanner.jpg")`,
         }}
       >
-        <div className="absolute bottom-5 left-5 text-5xl text-orange-300">
+        <div className="flex justify-center items-center h-96 text-4xl md:text-9xl text-white">
           {" "}
-          INFRAST LABORATORIES{" "}
+          LABORATORIES{" "}
         </div>
       </div>
     </>
