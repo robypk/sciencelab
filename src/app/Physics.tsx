@@ -55,7 +55,7 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={1}
           />
         </div>
-        {/* <div>
+         <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="Convex Lens"
@@ -65,7 +65,7 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={2}
           />
         </div>
-        <div>
+        {/* <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
