@@ -15,8 +15,7 @@ const Banner: React.FC<BannerProps> = ({}) => {
         }}
       >
         <div className="flex justify-center items-center h-96 text-4xl md:text-9xl text-white">
-          {" "}
-          LABORATORIES{" "}
+          APPARATUS
         </div>
       </div>
     </>
