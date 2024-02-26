@@ -64,15 +64,17 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={2}
           />
         </div>
-        {/* <div>
+ <div>
           <Card
-            imageUrl={"potentiometer.jpg"}
-            title="VoltMeter"
+            imageUrl={"Dam.jpg"}
+            title="Dams"
             ButtonName={GetButtonName()}
-            SceneIndex={0}
+            ButtonInteractable={!isunityloaded}
+            UnitySceneChange_card={unitySceneChage}
+            SceneIndex={3}
           />
         </div>
-        <div>
+               {/* <div>
           <Card
             imageUrl={"potentiometer.jpg"}
             title="VoltMeter"
