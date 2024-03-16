@@ -64,7 +64,7 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={2}
           />
         </div>
- <div>
+        <div>
           <Card
             imageUrl={"Dam.jpg"}
             title="Dams"
@@ -74,38 +74,16 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={3}
           />
         </div>
-               {/* <div>
-          <Card
-            imageUrl={"potentiometer.jpg"}
-            title="VoltMeter"
-            ButtonName={GetButtonName()}
-            SceneIndex={0}
-          />
-        </div>
         <div>
           <Card
-            imageUrl={"potentiometer.jpg"}
-            title="VoltMeter"
+            imageUrl={"slab.jpg"}
+            title="RCC-Slabs"
             ButtonName={GetButtonName()}
-            SceneIndex={0}
+            ButtonInteractable={!isunityloaded}
+            UnitySceneChange_card={unitySceneChage}
+            SceneIndex={4}
           />
         </div>
-        <div>
-          <Card
-            imageUrl={"potentiometer.jpg"}
-            title="VoltMeter"
-            ButtonName={GetButtonName()}
-            SceneIndex={0}
-          />
-        </div>
-        <div>
-          <Card
-            imageUrl={"potentiometer.jpg"}
-            title="VoltMeter"
-            ButtonName={GetButtonName()}
-            SceneIndex={0}
-          />
-        </div> */}
       </div>
     </>
   );
