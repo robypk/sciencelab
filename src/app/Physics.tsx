@@ -84,6 +84,16 @@ const Physics: React.FC<PhysicsProps> = ({
             SceneIndex={4}
           />
         </div>
+        <div>
+          <Card
+            imageUrl={"stair.jpg"}
+            title="Stair"
+            ButtonName={GetButtonName()}
+            ButtonInteractable={!isunityloaded}
+            UnitySceneChange_card={unitySceneChage}
+            SceneIndex={5}
+          />
+        </div>
       </div>
     </>
   );
