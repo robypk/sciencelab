@@ -2,41 +2,12 @@ import React from "react";
 import Card from "./Card";
 import "./globals.css";
 
-interface PhysicsProps {
-  unityLoading: number;
-  isunityloaded: boolean;
-  UnitySceneChange_Physics?(SceneIndex: number): void;
-}
+interface PhysicsProps {}
 
-const Physics: React.FC<PhysicsProps> = ({
-  unityLoading,
-  isunityloaded,
-  UnitySceneChange_Physics,
-}) => {
+const Physics: React.FC<PhysicsProps> = ({}) => {
   /**
    * SUMMARY
    *   Create a button name with unity loading Progress
-   */
-  function GetButtonName(): string {
-    let buttonNa: string = "No Data";
-    if (isunityloaded) {
-      buttonNa = "Let's head to the lab!";
-    } else {
-      buttonNa =
-        "Please Wait: " + Math.round(unityLoading * 100).toString() + " %";
-    }
-    return buttonNa;
-  }
-
-  function unitySceneChage(SceneIndex: number) {
-    if (UnitySceneChange_Physics) {
-      UnitySceneChange_Physics(SceneIndex);
-    }
-  }
-
-  /**
-   * SUMMARY
-   * Main return
    */
   return (
     <>
@@ -48,9 +19,7 @@ const Physics: React.FC<PhysicsProps> = ({
           <Card
             imageUrl="Theodolite.jpg"
             title="Theodolite"
-            ButtonName={GetButtonName()}
-            ButtonInteractable={!isunityloaded}
-            UnitySceneChange_card={unitySceneChage}
+            UnityBuildName="Theodolite"
             SceneIndex={1}
           />
         </div>
@@ -58,40 +27,32 @@ const Physics: React.FC<PhysicsProps> = ({
           <Card
             imageUrl={"Brick.jpg"}
             title="Brick Bonds"
-            ButtonName={GetButtonName()}
-            ButtonInteractable={!isunityloaded}
-            UnitySceneChange_card={unitySceneChage}
-            SceneIndex={2}
+            UnityBuildName="Brick"
+            SceneIndex={1}
           />
         </div>
         <div>
           <Card
             imageUrl={"Dam.jpg"}
             title="Dams"
-            ButtonName={GetButtonName()}
-            ButtonInteractable={!isunityloaded}
-            UnitySceneChange_card={unitySceneChage}
-            SceneIndex={3}
+            UnityBuildName="Dam"
+            SceneIndex={1}
           />
         </div>
         <div>
           <Card
             imageUrl={"slab.jpg"}
             title="RCC-Slabs"
-            ButtonName={GetButtonName()}
-            ButtonInteractable={!isunityloaded}
-            UnitySceneChange_card={unitySceneChage}
-            SceneIndex={4}
+            UnityBuildName="Slab"
+            SceneIndex={1}
           />
         </div>
         <div>
           <Card
             imageUrl={"stair.jpg"}
             title="Stair"
-            ButtonName={GetButtonName()}
-            ButtonInteractable={!isunityloaded}
-            UnitySceneChange_card={unitySceneChage}
-            SceneIndex={5}
+            UnityBuildName="Slab"
+            SceneIndex={1}
           />
         </div>
       </div>

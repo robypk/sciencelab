@@ -1,30 +1,21 @@
 // src/components/Card.tsx
 import React from "react";
 import "./globals.css";
-import CustomButton from "./CustomButton";
+import Link from "next/link";
 
 interface CardProps {
   imageUrl: string;
   title: string;
-  ButtonName: string;
-  UnitySceneChange_card?(SceneIndex: number): void;
-  ButtonInteractable?: boolean;
+  UnityBuildName: string;
   SceneIndex: number;
 }
 
 const Card: React.FC<CardProps> = ({
   imageUrl,
   title,
-  ButtonName,
-  UnitySceneChange_card,
-  ButtonInteractable,
+  UnityBuildName,
   SceneIndex,
 }) => {
-  function onCardButtonClick() {
-    if (UnitySceneChange_card) {
-      UnitySceneChange_card(SceneIndex);
-    }
-  }
   return (
     <div className=" m-5">
       <div className=" relative h-52 w-72 rounded-xl overflow-hidden shadow-gray-600 shadow-xl">
@@ -38,13 +29,18 @@ const Card: React.FC<CardProps> = ({
             {title}
           </h1>
           <div className="absolute bottom-0 left-0 p-4">
-            <button
+            <Link
               className=" bg-inherit border-2 border-cyan-600 hover:bg-teal-400 text-white font-semibold py-2 px-4 rounded-full transition duration-300"
-              onClick={onCardButtonClick}
-              disabled={ButtonInteractable}
+              href={{
+                pathname: "/threedviewer",
+                query: {
+                  SceneIndex: SceneIndex,
+                  UnityBuildName: UnityBuildName,
+                },
+              }}
             >
-              {ButtonName}
-            </button>
+              Let's head to the lab!
+            </Link>
           </div>
         </div>
       </div>
