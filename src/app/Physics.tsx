@@ -51,7 +51,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
           <Card
             imageUrl={"stair.jpg"}
             title="Stair"
-            UnityBuildName="Slab"
+            UnityBuildName="Stair"
             SceneIndex={1}
           />
         </div>
