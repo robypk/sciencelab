@@ -55,7 +55,6 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
    */
   useEffect(() => {
     unload();
-    console.log("Scene unloaded");
   }, [unloadScene]);
 
   useEffect(() => {
