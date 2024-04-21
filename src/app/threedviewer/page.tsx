@@ -24,9 +24,9 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
       setshowButtons(true);
     } else {
       buttonNa =
-        "Please wait. Do not navigate away or close the browser. Loading...  " +
+        "Please wait. Do not navigate away or close the window. Loading: " +
         Math.round(unityLoadingPercentage * 100).toString() +
-        " %";
+        "%";
     }
     return buttonNa;
   }
@@ -50,35 +50,46 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
   }
   return (
     <>
-      <div className=" absolute z-10 bg-white">
-        <div className="fixed inset-0 flex justify-center items-center bg-cover bg-center">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h1 className="text-3xl font-bold mb-4">Loading...</h1>
-            <div className="w-full h-4 bg-gray-300 rounded-full mb-4">
-              <div className="h-full bg-blue-500 rounded-full"></div>
-            </div>
-            <div className="flex justify-between">
-              {showButtons ? (
-                <div>
-                  <Link
-                    className=" bg-white border-2 border-cyan-600 hover:bg-teal-400 text-black font-semibold py-2 px-4 rounded-full transition duration-300 ml-10 mr-32 "
-                    href="/"
-                    onClick={onHomeButtonClick}
-                  >
-                    Home
-                  </Link>
-                  <button
-                    className=" bg-white border-2 border-cyan-600 hover:bg-teal-400 text-black font-semibold py-2 px-4 rounded-full transition duration-300 mr-10 ml-32"
-                    onClick={onContinueButtonClick}
-                  >
-                    Continue
-                  </button>
+      <div className="flex justify-center items-center h-screen">
+        <img
+          src={searchParams.get("ImageURL")?.toString()}
+          alt="ExpImage"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="absolute bottom-10 left-24 right-24 flex justify-between px-4 pb-4">
+          {showButtons ? (
+            <div className=" w-screen flex flex-wrap justify-evenly">
+              <Link href="/">
+                <div
+                  className="bg-white h-10 md:h-14 w-24 md:w-28 border-2 border-cyan-600 hover:bg-teal-400 text-black text-sm font-semibold flex justify-center items-center rounded-full transition duration-300 m-1"
+                  onClick={onHomeButtonClick}
+                >
+                  Home
                 </div>
-              ) : (
-                <div>{GetButtonName()}</div>
-              )}
+              </Link>
+              <button
+                className="bg-white h-10 md:h-14 w-24 md:w-28 border-2 border-cyan-600 hover:bg-teal-400 text-black text-sm font-semibold flex justify-center items-center rounded-full transition duration-300 m-1"
+                onClick={onContinueButtonClick}
+              >
+                Continue
+              </button>
             </div>
-          </div>
+          ) : (
+            <div className="fixed bottom-0 left-0 w-full px-6 flex flex-col items-center justify-end text-white font-semibold mb-10">
+              <div className="text-xs md:text-3xl text-center mb-2">
+                {GetButtonName()}
+              </div>
+              <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-green-500"
+                  style={{
+                    width: `${Math.round(unityLoadingPercentage * 100)}%`,
+                  }}
+                ></div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div className=" absolute z-0">

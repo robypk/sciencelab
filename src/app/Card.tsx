@@ -36,6 +36,7 @@ const Card: React.FC<CardProps> = ({
                 query: {
                   SceneIndex: SceneIndex,
                   UnityBuildName: UnityBuildName,
+                  ImageURL: imageUrl,
                 },
               }}
             >
