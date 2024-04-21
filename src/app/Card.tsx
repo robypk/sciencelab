@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({
                 },
               }}
             >
-              Let's head to the lab!
+              Start
             </Link>
           </div>
         </div>
