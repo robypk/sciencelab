@@ -55,6 +55,14 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             SceneIndex={1}
           />
         </div>
+        <div>
+          <Card
+            imageUrl={"PlaneTable_3PointProblem.jpg"}
+            title="Plane Table: Three Point Problem "
+            UnityBuildName="PlaneTable_3PointProblem"
+            SceneIndex={1}
+          />
+        </div>
       </div>
     </>
   );
