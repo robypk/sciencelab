@@ -112,7 +112,7 @@ const UnityBuild: React.FC<UnityBuildProps> = ({
     <>
       <Unity
         unityProvider={unityProvider}
-        devicePixelRatio={devicePixelRatio}
+        devicePixelRatio={1.2}
         className=" w-1"
       />
     </>
