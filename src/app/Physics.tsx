@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import "./globals.css";
+import ThreejsCard from "./ThreejsCard";
 
 interface PhysicsProps {}
 
@@ -70,6 +71,9 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="PlaneTable_BS"
             SceneIndex={1}
           />
+        </div>
+        <div>
+          <ThreejsCard imageUrl={"stair.jpg"} title="Threejs" />
         </div>
       </div>
     </>
