@@ -22,6 +22,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             title="Theodolite"
             UnityBuildName="Theodolite"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -30,6 +31,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             title="Brick Bonds"
             UnityBuildName="Brick"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -38,6 +40,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             title="Dams"
             UnityBuildName="Dam"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -46,6 +49,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             title="RCC-Slabs"
             UnityBuildName="Slab"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -54,6 +58,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             title="Stair"
             UnityBuildName="Stair"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -63,6 +68,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             SubTitle="Three Point Problem "
             UnityBuildName="PlaneTable_3PointProblem"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
@@ -72,10 +78,16 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             SubTitle=" Orientation-BS "
             UnityBuildName="PlaneTable_BS"
             SceneIndex={1}
+            isDisabled={true}
           />
         </div>
         <div>
-          <ThreejsCard imageUrl={"stair.jpg"} title="Threejs" />
+          <ThreejsCard
+            imageUrl={"Development.jpg"}
+            title="Experiment"
+            SubTitle="Under Development"
+            isDisabled={false}
+          />
         </div>
       </div>
     </>
