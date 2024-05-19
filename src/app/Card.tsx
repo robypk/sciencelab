@@ -10,6 +10,7 @@ interface CardProps {
   UnityBuildName: string;
   SceneIndex: number;
   isDisabled: boolean;
+  isTrial: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,6 +20,7 @@ const Card: React.FC<CardProps> = ({
   UnityBuildName,
   SceneIndex,
   isDisabled,
+  isTrial,
 }) => {
   return (
     <div className=" m-5">
@@ -63,10 +65,11 @@ const Card: React.FC<CardProps> = ({
                     SceneIndex: SceneIndex,
                     UnityBuildName: UnityBuildName,
                     ImageURL: imageUrl,
+                    Trial: isTrial,
                   },
                 }}
               >
-                Launch
+                {isTrial ? <div>Launch</div> : <div> Try it Out!</div>}
               </Link>
             )}
           </div>

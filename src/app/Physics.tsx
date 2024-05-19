@@ -23,6 +23,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Theodolite"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={true}
           />
         </div>
         <div>
@@ -32,6 +33,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Brick"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={true}
           />
         </div>
         <div>
@@ -41,6 +43,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Dam"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={false}
           />
         </div>
         <div>
@@ -50,6 +53,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Slab"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={false}
           />
         </div>
         <div>
@@ -59,6 +63,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Stair"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={true}
           />
         </div>
         <div>
@@ -69,6 +74,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="PlaneTable_3PointProblem"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={true}
           />
         </div>
         <div>
@@ -79,6 +85,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="PlaneTable_BS"
             SceneIndex={1}
             isDisabled={true}
+            isTrial={true}
           />
         </div>
         <div>

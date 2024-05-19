@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UnityBuild from "../UnityBuild";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Banner from "../Banner";
 
 interface ThreeDViewerProps {
   // Define props here
@@ -14,7 +15,8 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
   const [isContinueButtonClick, setIsContinueButtonClick] = useState(false);
   const [isHomeButtonClick, setIsHomeButtonClick] = useState(false);
   const [showButtons, setshowButtons] = useState(false);
-
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [timerStarted, setTimerStarted] = useState(false);
   const searchParams = useSearchParams();
 
   function GetButtonName(): string {
@@ -31,6 +33,16 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
     return buttonNa;
   }
 
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    let TrialTime = 0.2;
+    if (timerStarted) {
+      timer = setTimeout(() => {
+        setShowOverlay(true);
+      }, TrialTime * 60000); // 2 minutes in milliseconds
+    }
+    return () => clearTimeout(timer);
+  }, [timerStarted]);
   /**
    * Global Functions
    */
@@ -39,6 +51,12 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
   }
   function onContinueButtonClick() {
     setIsContinueButtonClick(!isContinueButtonClick);
+    let trial = searchParams.get("Trial");
+    if (trial === "false") {
+      setTimerStarted(true);
+    } else {
+      setTimerStarted(false);
+    }
   }
 
   function percentageUnityLoading(loadingPercentage: number) {
@@ -92,16 +110,18 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = () => {
           )}
         </div>
       </div>
-      <div className=" absolute z-0">
-        <UnityBuild
-          unityLoadingPercentage={percentageUnityLoading}
-          unityLoaded={unityisLoaded}
-          SceneIndex={searchParams.get("SceneIndex")}
-          UnityBuildName={searchParams.get("UnityBuildName")}
-          isContinueButtonClick={isContinueButtonClick}
-          unloadScene={isHomeButtonClick}
-        />
-      </div>
+      {!showOverlay && (
+        <div className=" absolute z-0">
+          <UnityBuild
+            unityLoadingPercentage={percentageUnityLoading}
+            unityLoaded={unityisLoaded}
+            SceneIndex={searchParams.get("SceneIndex")}
+            UnityBuildName={searchParams.get("UnityBuildName")}
+            isContinueButtonClick={isContinueButtonClick}
+            unloadScene={isHomeButtonClick}
+          />
+        </div>
+      )}
     </>
   );
 };
