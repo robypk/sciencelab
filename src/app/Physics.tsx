@@ -18,6 +18,17 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
       <div className="flex flex-wrap justify-start">
         <div>
           <Card
+            imageUrl={"PlaneTable_3PointProblem.jpg"}
+            title="Plane Table: "
+            SubTitle="Three Point Problem "
+            UnityBuildName="PlaneTable_3PointProblem"
+            SceneIndex={1}
+            isDisabled={true}
+            isTrial={true}
+          />
+        </div>
+        <div>
+          <Card
             imageUrl="Theodolite.jpg"
             title="Theodolite"
             UnityBuildName="Theodolite"
@@ -33,7 +44,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Brick"
             SceneIndex={1}
             isDisabled={true}
-            isTrial={true}
+            isTrial={false}
           />
         </div>
         <div>
@@ -63,20 +74,10 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="Stair"
             SceneIndex={1}
             isDisabled={true}
-            isTrial={true}
+            isTrial={false}
           />
         </div>
-        <div>
-          <Card
-            imageUrl={"PlaneTable_3PointProblem.jpg"}
-            title="Plane Table: "
-            SubTitle="Three Point Problem "
-            UnityBuildName="PlaneTable_3PointProblem"
-            SceneIndex={1}
-            isDisabled={true}
-            isTrial={true}
-          />
-        </div>
+
         <div>
           <Card
             imageUrl={"PlaneTable_3PointProblem.jpg"}
@@ -85,7 +86,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             UnityBuildName="PlaneTable_BS"
             SceneIndex={1}
             isDisabled={true}
-            isTrial={true}
+            isTrial={false}
           />
         </div>
         <div>
