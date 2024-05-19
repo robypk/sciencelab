@@ -6,6 +6,7 @@ import Link from "next/link";
 interface CardProps {
   imageUrl: string;
   title: string;
+  SubTitle?: string;
   UnityBuildName: string;
   SceneIndex: number;
 }
@@ -13,6 +14,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   imageUrl,
   title,
+  SubTitle,
   UnityBuildName,
   SceneIndex,
 }) => {
@@ -27,6 +29,7 @@ const Card: React.FC<CardProps> = ({
         >
           <h1 className=" bottom-0 left-0 p-4 text-white text-3xl font-semibold">
             {title}
+            <div className="text-white text-lg font-semibold">{SubTitle}</div>
           </h1>
           <div className="absolute bottom-0 left-0 p-4">
             <Link
