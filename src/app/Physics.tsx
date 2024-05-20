@@ -94,7 +94,7 @@ const Physics: React.FC<PhysicsProps> = ({}) => {
             imageUrl={"Development.jpg"}
             title="Experiment"
             SubTitle="Under Development"
-            isDisabled={false}
+            isDisabled={true}
           />
         </div>
       </div>
